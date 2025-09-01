@@ -1,0 +1,5 @@
+{
+  "name": "Interactive CV Builder",
+  "description": "A dynamic web application that allows users to fill in their personal and professional details into a structured form. The application collects all necessary information to build a comprehensive CV and provides a JSON output for data processing.",
+  "requestFramePermissions": []
+}
