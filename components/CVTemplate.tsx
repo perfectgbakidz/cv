@@ -25,14 +25,25 @@ const CVTemplate = React.forwardRef<HTMLDivElement, CVTemplateProps>(({ data }, 
       style={{ width: '210mm', minHeight: '297mm', fontFamily: 'Arial, sans-serif' }}
       className="p-10 bg-white text-gray-900"
     >
-      <header className="text-center mb-8">
-        <h1 className="text-4xl font-extrabold tracking-tight">{personalInfo.fullName}</h1>
-        <div className="flex justify-center items-center gap-x-4 gap-y-1 mt-3 text-xs text-gray-600 flex-wrap">
-          {personalInfo.email && <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-1.5"><MailIcon /> {personalInfo.email}</a>}
-          {personalInfo.phone && <span className="flex items-center gap-1.5"><PhoneIcon /> {personalInfo.phone}</span>}
-          {personalInfo.address && <span className="flex items-center gap-1.5"><LocationIcon /> {personalInfo.address}</span>}
-          {personalInfo.linkedin && <a href={personalInfo.linkedin} className="flex items-center gap-1.5"><LinkedinIcon /> LinkedIn</a>}
-          {personalInfo.portfolio && <a href={personalInfo.portfolio} className="flex items-center gap-1.5"><WebsiteIcon /> Portfolio</a>}
+      <header className="flex items-center mb-8 border-b-2 border-gray-300 pb-6">
+        {personalInfo.profilePicture && (
+            <div className="mr-8 flex-shrink-0">
+                <img 
+                    src={personalInfo.profilePicture} 
+                    alt={personalInfo.fullName} 
+                    className="w-32 h-32 rounded-full object-cover border-4 border-gray-200"
+                />
+            </div>
+        )}
+        <div className="flex-grow">
+            <h1 className="text-4xl font-extrabold tracking-tight">{personalInfo.fullName}</h1>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1 mt-3 text-xs text-gray-600">
+                {personalInfo.email && <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-1.5"><MailIcon /> {personalInfo.email}</a>}
+                {personalInfo.phone && <span className="flex items-center gap-1.5"><PhoneIcon /> {personalInfo.phone}</span>}
+                {personalInfo.address && <span className="flex items-center gap-1.5 col-span-2"><LocationIcon /> {personalInfo.address}</span>}
+                {personalInfo.linkedin && <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5"><LinkedinIcon /> LinkedIn</a>}
+                {personalInfo.portfolio && <a href={personalInfo.portfolio} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5"><WebsiteIcon /> Portfolio</a>}
+            </div>
         </div>
       </header>
 
@@ -49,7 +60,7 @@ const CVTemplate = React.forwardRef<HTMLDivElement, CVTemplateProps>(({ data }, 
                 <p className="text-xs text-gray-500">{exp.startDate} - {exp.endDate}</p>
               </div>
               <p className="text-sm italic text-gray-700">{exp.company} {exp.location && `| ${exp.location}`}</p>
-              <p className="text-sm mt-1 text-gray-600">{exp.responsibilities}</p>
+              <p className="text-sm mt-1 text-gray-600 whitespace-pre-wrap">{exp.responsibilities}</p>
             </div>
           ))}
         </Section>
@@ -86,7 +97,7 @@ const CVTemplate = React.forwardRef<HTMLDivElement, CVTemplateProps>(({ data }, 
             <div key={proj.id} className="mb-3">
               <h3 className="font-bold text-md">{proj.title}</h3>
               <p className="text-sm italic text-gray-700">Tools: {proj.tools}</p>
-              <p className="text-sm mt-1 text-gray-600">{proj.description}</p>
+              <p className="text-sm mt-1 text-gray-600 whitespace-pre-wrap">{proj.description}</p>
             </div>
           ))}
         </Section>
@@ -103,7 +114,7 @@ const CVTemplate = React.forwardRef<HTMLDivElement, CVTemplateProps>(({ data }, 
             {awards.map(award => (
                 <div key={award.id} className="mb-2 text-sm">
                     <span className="font-bold">{award.name}</span> ({award.year})
-                    <p className="text-xs text-gray-600">{award.description}</p>
+                    <p className="text-xs text-gray-600 whitespace-pre-wrap">{award.description}</p>
                 </div>
             ))}
         </Section>

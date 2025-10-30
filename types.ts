@@ -1,4 +1,5 @@
 
+
 export interface PersonalInfo {
   fullName: string;
   dob: string;
@@ -8,6 +9,7 @@ export interface PersonalInfo {
   address: string;
   linkedin: string;
   portfolio: string;
+  profilePicture: string;
 }
 
 export interface Education {
@@ -71,6 +73,26 @@ export interface Referee {
     relationship: string;
 }
 
+export interface ApplicationLetterData {
+  hiringManager: string;
+  companyName: string;
+  jobTitle: string;
+  sourceOfJobAd: string;
+  letterBody: string;
+}
+
+export interface CoverLetterData {
+  recipientName: string;
+  recipientDepartment: string;
+  companyName: string;
+  companyAddress: string;
+  jobTitle: string;
+  sourceOfJobAd: string;
+  keyRequirements: string;
+  companyValues: string;
+  letterBody: string;
+}
+
 export interface CVData {
   personalInfo: PersonalInfo;
   careerObjective: string;
@@ -83,6 +105,8 @@ export interface CVData {
   languages: Language[];
   hobbies: string;
   referees: Referee[];
+  applicationLetter: ApplicationLetterData;
+  coverLetter: CoverLetterData;
 }
 
 // A generic type for validation errors

@@ -54,3 +54,10 @@ export const WebsiteIcon = () => (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
     </svg>
 );
+
+export const MagicWandIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.82.161m-6.067-5.126a.75.75 0 01.588.873l-1.524 4.571a.75.75 0 11-1.47-.489l1.524-4.571a.75.75 0 01.882-.384z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12.75 21a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0v2.25a.75.75 0 01-.75.75zM5.25 11.25a.75.75 0 01-.75-.75V8.25a.75.75 0 011.5 0v2.25a.75.75 0 01-.75.75zM18.75 11.25a.75.75 0 01-.75-.75V8.25a.75.75 0 011.5 0v2.25a.75.75 0 01-.75.75z" />
+    </svg>
+);
